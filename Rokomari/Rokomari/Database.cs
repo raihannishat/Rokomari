@@ -129,7 +129,8 @@ namespace Rokomari
             Main_Menu_Table.AddRow("3", "Buy Books in Rokomari");
             Main_Menu_Table.AddRow("4", "Rokomari Book Info");
             Main_Menu_Table.AddRow("5", "Rokomari Customer Info");
-            Main_Menu_Table.AddRow("6", "Exit Rokomari");
+            Main_Menu_Table.AddRow("6", "Rokomari Orders List");
+            Main_Menu_Table.AddRow("7", "Exit Rokomari");
             Main_Menu_Table.Write();
         }
 

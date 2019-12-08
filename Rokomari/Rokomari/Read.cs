@@ -18,19 +18,23 @@ namespace Rokomari
 
             _QueryString = " SELECT * FROM Books; ";
 
-            using SqlConnection Connection = new SqlConnection(_ConnectionString);
-            using SqlCommand Command = new SqlCommand(_QueryString, Connection);
-
-            Connection.Open();
-            using SqlDataReader Reader = Command.ExecuteReader();
-
-            while (Reader.Read())
+            using (SqlConnection Connection = new SqlConnection(_ConnectionString))
             {
-                int ID = (int)Reader["Book_ID"];
-                string Name = (string)Reader["Book_Name"];
-                string Author = (string)Reader["Book_Author"];
-                int Price = (int)Reader["Book_Price"];
-                Book_List.Add(new Books(ID, Name, Author, Price));
+                using (SqlCommand Command = new SqlCommand(_QueryString, Connection))
+                {
+                    Connection.Open();
+                    using (SqlDataReader Reader = Command.ExecuteReader())
+                    {
+                        while (Reader.Read())
+                        {
+                            int ID = (int)Reader["Book_ID"];
+                            string Name = (string)Reader["Book_Name"];
+                            string Author = (string)Reader["Book_Author"];
+                            int Price = (int)Reader["Book_Price"];
+                            Book_List.Add(new Books(ID, Name, Author, Price));
+                        }
+                    }
+                }
             }
 
             ConsoleTable Books_Table = new ConsoleTable("ID", "Name", "Author", "Price");
@@ -49,18 +53,22 @@ namespace Rokomari
 
             _QueryString = " SELECT * FROM Customers; ";
 
-            using SqlConnection Connection = new SqlConnection(_ConnectionString);
-            using SqlCommand Command = new SqlCommand(_QueryString, Connection);
-
-            Connection.Open();
-            using SqlDataReader Reader = Command.ExecuteReader();
-
-            while (Reader.Read())
+            using (SqlConnection Connection = new SqlConnection(_ConnectionString))
             {
-                int ID = (int)Reader["Customer_ID"];
-                string Name = (string)Reader["Customer_Name"];
-                string Address = (string)Reader["Customer_Address"];
-                Customer_List.Add(new Customers(ID, Name, Address));
+                using (SqlCommand Command = new SqlCommand(_QueryString, Connection))
+                {
+                    Connection.Open();
+                    using (SqlDataReader Reader = Command.ExecuteReader())
+                    {
+                        while (Reader.Read())
+                        {
+                            int ID = (int)Reader["Customer_ID"];
+                            string Name = (string)Reader["Customer_Name"];
+                            string Address = (string)Reader["Customer_Address"];
+                            Customer_List.Add(new Customers(ID, Name, Address));
+                        }
+                    }
+                }
             }
 
             ConsoleTable Customers_Table = new ConsoleTable("ID", "Name", "Address");
@@ -79,18 +87,22 @@ namespace Rokomari
 
             _QueryString = " SELECT * FROM Orders; ";
 
-            using SqlConnection Connection = new SqlConnection(_ConnectionString);
-            using SqlCommand Command = new SqlCommand(_QueryString, Connection);
-
-            Connection.Open();
-            using SqlDataReader Reader = Command.ExecuteReader();
-
-            while (Reader.Read())
+            using (SqlConnection Connection = new SqlConnection(_ConnectionString))
             {
-                int Order_ID = (int)Reader["Order_ID"];
-                int Book_ID = (int)Reader["Book_ID"];
-                int Customer_ID = (int)Reader["Customer_ID"];
-                Order_List.Add(new Orders(Order_ID, Book_ID, Customer_ID));
+                using (SqlCommand Command = new SqlCommand(_QueryString, Connection))
+                {
+                    Connection.Open();
+                    using (SqlDataReader Reader = Command.ExecuteReader())
+                    {
+                        while (Reader.Read())
+                        {
+                            int Order_ID = (int)Reader["Order_ID"];
+                            int Book_ID = (int)Reader["Book_ID"];
+                            int Customer_ID = (int)Reader["Customer_ID"];
+                            Order_List.Add(new Orders(Order_ID, Book_ID, Customer_ID));
+                        }
+                    }
+                }
             }
 
             ConsoleTable Orders_Table = new ConsoleTable("Order ID", "Book ID", "Customer ID");

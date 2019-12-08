@@ -60,7 +60,7 @@ namespace Rokomari
                     }
                     else if (Customer_Option == 4)
                     {
-                        Rokomari.Update_Customer();
+                        Rokomari.Delete_Customer();
                     }
                 }
                 else if (Option == 3)
@@ -68,6 +68,10 @@ namespace Rokomari
                     Console.Clear();
                     new Read().Read_Books();
                     Rokomari.Buy_Book();
+                }
+                else if (Option == 6)
+                {
+                    Rokomari.Select_Order();
                 }
                 else
                 {

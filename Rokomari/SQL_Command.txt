@@ -16,7 +16,7 @@ CREATE TABLE Customers(
 );
 
 CREATE TABLE Orders(
-	Order_ID int Not NULL,
+	Order_ID int NOT NULL PRIMARY KEY,
 	Book_ID int FOREIGN KEY REFERENCES Books (Book_ID),
 	Customer_ID int FOREIGN KEY REFERENCES Customers (Customer_ID)
 );
