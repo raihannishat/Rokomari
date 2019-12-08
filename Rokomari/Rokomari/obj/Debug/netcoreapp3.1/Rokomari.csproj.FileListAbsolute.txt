@@ -17,22 +17,3 @@ C:\Users\Raihan Nishat\source\repos\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\ru
 C:\Users\Raihan Nishat\source\repos\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Raihan Nishat\source\repos\Rokomari\Rokomari\obj\Debug\netcoreapp3.1\Rokomari.dll
 C:\Users\Raihan Nishat\source\repos\Rokomari\Rokomari\obj\Debug\netcoreapp3.1\Rokomari.pdb
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\Rokomari.exe
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\Rokomari.deps.json
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\Rokomari.runtimeconfig.json
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\Rokomari.runtimeconfig.dev.json
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\Rokomari.dll
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\Rokomari.pdb
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\ConsoleTables.dll
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\obj\Debug\netcoreapp3.1\Rokomari.csprojAssemblyReference.cache
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\obj\Debug\netcoreapp3.1\Rokomari.AssemblyInfoInputs.cache
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\obj\Debug\netcoreapp3.1\Rokomari.AssemblyInfo.cs
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\obj\Debug\netcoreapp3.1\Rokomari.csproj.CopyComplete
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\obj\Debug\netcoreapp3.1\Rokomari.dll
-E:\Code\GitHub\Romomari\Rokomari\Rokomari\obj\Debug\netcoreapp3.1\Rokomari.pdb

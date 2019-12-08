@@ -4887,11 +4887,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Code\\GitHub\\Romomari\\Rokomari\\Rokomari\\Rokomari.csproj",
+      "projectUniqueName": "C:\\Users\\Raihan Nishat\\source\\repos\\Rokomari\\Rokomari\\Rokomari.csproj",
       "projectName": "Rokomari",
-      "projectPath": "E:\\Code\\GitHub\\Romomari\\Rokomari\\Rokomari\\Rokomari.csproj",
+      "projectPath": "C:\\Users\\Raihan Nishat\\source\\repos\\Rokomari\\Rokomari\\Rokomari.csproj",
       "packagesPath": "C:\\Users\\Raihan Nishat\\.nuget\\packages\\",
-      "outputPath": "E:\\Code\\GitHub\\Romomari\\Rokomari\\Rokomari\\obj\\",
+      "outputPath": "C:\\Users\\Raihan Nishat\\source\\repos\\Rokomari\\Rokomari\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

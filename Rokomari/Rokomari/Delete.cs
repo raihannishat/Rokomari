@@ -25,5 +25,35 @@ namespace Rokomari
             Connection.Open();
             Command.ExecuteNonQuery();
         }
+
+        public void Delete_Customer(int Customer_ID)
+        {
+            _QueryString = " DELETE FROM Customer WHERE Customer_ID = @Customer_ID; ";
+
+            using SqlConnection Connection = new SqlConnection(_ConnectionString);
+            using SqlCommand Command = new SqlCommand(_QueryString, Connection);
+
+            SqlParameter Customer_ID_Para = new SqlParameter("@Customer_ID", SqlDbType.Int);
+            Customer_ID_Para.Value = Customer_ID;
+            Command.Parameters.Add(Customer_ID_Para);
+
+            Connection.Open();
+            Command.ExecuteNonQuery();
+        }
+
+        public void Delete_Order(int Order_ID)
+        {
+            _QueryString = " DELETE FROM Order WHERE Order_ID = @Order_ID; ";
+
+            using SqlConnection Connection = new SqlConnection(_ConnectionString);
+            using SqlCommand Command = new SqlCommand(_QueryString, Connection);
+
+            SqlParameter Order_ID_Para = new SqlParameter("@Order_ID", SqlDbType.Int);
+            Order_ID_Para.Value = Order_ID;
+            Command.Parameters.Add(Order_ID_Para);
+
+            Connection.Open();
+            Command.ExecuteNonQuery();
+        }
     }
 }

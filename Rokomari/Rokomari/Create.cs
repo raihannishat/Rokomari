@@ -13,8 +13,8 @@ namespace Rokomari
 
         public void Create_Books(Books Book)
         {
-            _QueryString = " INSERT INTO Books (Book_Name, Book_Author, Book_Price, Book_Stock, Book_Sell) " +
-                           " VALUES (@Book_Name, @Book_Author, @Book_Price, @Book_Stock, @Book_Sell); ";
+            _QueryString = " INSERT INTO Books (Book_Name, Book_Author, Book_Price) " +
+                           " VALUES (@Book_Name, @Book_Author, @Book_Price); ";
 
             using SqlConnection Connection = new SqlConnection(_ConnectionString);
             using SqlCommand Command = new SqlCommand(_QueryString, Connection);
@@ -31,13 +31,45 @@ namespace Rokomari
             Book_Price_Para.Value = Book.Book_Price;
             Command.Parameters.Add(Book_Price_Para);
 
-            SqlParameter Book_Stock_Para = new SqlParameter("@Book_Stock", SqlDbType.Int);
-            Book_Stock_Para.Value = Book.Book_Stock;
-            Command.Parameters.Add(Book_Stock_Para);
+            Connection.Open();
+            Command.ExecuteNonQuery();
+        }
 
-            SqlParameter Book_Sell_Para = new SqlParameter("@Book_Sell", SqlDbType.Int);
-            Book_Sell_Para.Value = Book.Book_Sell;
-            Command.Parameters.Add(Book_Sell_Para);
+        public void Create_Customer(Customers Customer)
+        {
+            _QueryString = " INSERT INTO Customers (Customer_Name, Customer_Address) " +
+                           " VALUES (@Customer_Name, @Customer_Address); ";
+
+            using SqlConnection Connection = new SqlConnection(_ConnectionString);
+            using SqlCommand Command = new SqlCommand(_QueryString, Connection);
+
+            SqlParameter Customer_Name_Para = new SqlParameter("@Customer_Name", SqlDbType.VarChar);
+            Customer_Name_Para.Value = Customer.Customer_Name;
+            Command.Parameters.Add(Customer_Name_Para);
+
+            SqlParameter Customer_Address_Para = new SqlParameter("@Customer_Address", SqlDbType.VarChar);
+            Customer_Address_Para.Value = Customer.Customer_Address;
+            Command.Parameters.Add(Customer_Address_Para);
+
+            Connection.Open();
+            Command.ExecuteNonQuery();
+        }
+
+        public void Create_Orders(int Book_ID, int Customer_ID)
+        {
+            _QueryString = " INSERT INTO Orders (Book_ID, Customer_ID) " +
+                           " VALUES (@Book_ID, @Customer_ID); ";
+
+            using SqlConnection Connection = new SqlConnection(_ConnectionString);
+            using SqlCommand Command = new SqlCommand(_QueryString, Connection);
+
+            SqlParameter Book_ID_Para = new SqlParameter("@Book_ID", SqlDbType.Int);
+            Book_ID_Para.Value = Book_ID;
+            Command.Parameters.Add(Book_ID_Para);
+
+            SqlParameter Customer_ID_Para = new SqlParameter("@Customer_ID", SqlDbType.Int);
+            Customer_ID_Para.Value = Customer_ID;
+            Command.Parameters.Add(Customer_ID_Para);
 
             Connection.Open();
             Command.ExecuteNonQuery();
