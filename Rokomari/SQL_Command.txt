@@ -5,8 +5,6 @@ CREATE TABLE Books (
 	Book_Name varchar(255),
 	Book_Author varchar(255),
 	Book_Price int,
-	Book_Stock int,
-	Book_Sell int
 );
 
 CREATE TABLE Customers(

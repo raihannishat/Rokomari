@@ -6,11 +6,8 @@ using System.Data.SqlClient;
 
 namespace Rokomari
 {
-    public class Update
+    public class Update : Connection
     {
-        private const string _ConnectionString = "Server = DESKTOP-P2EDQU6; Database = Rokomari; Trusted_Connection = true;";
-        private string _QueryString = null;
-
         public void Update_Book(Books Book)
         {
             _QueryString = " UPDATE Books " +

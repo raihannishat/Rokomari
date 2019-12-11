@@ -6,11 +6,8 @@ using System.Data.SqlClient;
 
 namespace Rokomari
 {
-    public class Delete
+    public class Delete : Connection
     {
-        private const string _ConnectionString = "Server = DESKTOP-P2EDQU6; Database = Rokomari; Trusted_Connection = true;";
-        private string _QueryString = null;
-
         public void Delete_Book(int Book_ID)
         {
             _QueryString = " DELETE FROM Books WHERE Book_ID = @Book_ID; ";

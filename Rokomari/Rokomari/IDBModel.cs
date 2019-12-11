@@ -22,5 +22,7 @@ namespace Rokomari
         void Main_Menu();
         void Book_Menu();
         void Customer_Menu();
+        void Book_Info();
+        void Customer_Info();
     }
 }

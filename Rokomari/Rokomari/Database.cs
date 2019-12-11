@@ -7,6 +7,26 @@ namespace Rokomari
 {
     public class Database : IDBModel
     {
+        public void Book_Info()
+        {
+            Console.Clear();
+            new Read().Read_Books();
+            Console.Write(" Enter your Book ID: ");
+            int Book_ID = 0;
+
+            try
+            {
+                Book_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
+
+            new Get_By_Book().Get_Customer_Info(Book_ID);
+            Console.ReadKey();
+        }
+
         public void Book_Menu()
         {
             Console.Clear();
@@ -14,20 +34,64 @@ namespace Rokomari
             Book_Menu_Table.AddRow("1", "Create Book");
             Book_Menu_Table.AddRow("2", "Read Book");
             Book_Menu_Table.AddRow("3", "Update Book");
-            Book_Menu_Table.AddRow("4", "Delete Book");
             Book_Menu_Table.Write();
         }
 
         public void Buy_Book()
         {
             Console.Write(" Enter your Book ID: ");
-            int Book_ID = int.Parse(Console.ReadLine());
+            int Book_ID = 0;
+
+            try
+            {
+                Book_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
 
             Console.Write(" Enter your Customer ID: ");
-            int Customer_ID = int.Parse(Console.ReadLine());
+            int Customer_ID = 0;
 
-            new Create().Create_Orders(Book_ID, Customer_ID);
-            Console.WriteLine(" Successfully purchased the book");
+            try
+            {
+                Customer_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
+
+            if (new Get_By_Book().Get_Book(Book_ID) != null && new Get_By_Book().Get_Customer(Customer_ID) != null)
+            {
+                new Create().Create_Orders(Book_ID, Customer_ID);
+                Console.WriteLine(" Successfully purchased the book");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine(" Book_ID or Customer_ID invalid.");
+            }
+        }
+
+        public void Customer_Info()
+        {
+            Console.Clear();
+            new Read().Read_Customers();
+            Console.Write(" Enter your Customer ID: ");
+            int Customer_ID = 0;
+
+            try
+            {
+                Customer_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
+
+            new Get_By_Book().Get_Book_Info(Customer_ID);
             Console.ReadKey();
         }
 
@@ -38,7 +102,6 @@ namespace Rokomari
             Customer_Menu_Table.AddRow("1", "Create Customer");
             Customer_Menu_Table.AddRow("2", "Read Customer");
             Customer_Menu_Table.AddRow("3", "Update Customer");
-            Customer_Menu_Table.AddRow("4", "Delete Customer");
             Customer_Menu_Table.Write();
         }
 
@@ -46,11 +109,27 @@ namespace Rokomari
         {
             Console.Clear();
             Console.Write(" Enter Book ID: ");
-            int Book_ID = int.Parse(Console.ReadLine());
+            int Book_ID = 0;
 
-            new Delete().Delete_Book(Book_ID);
-            Console.WriteLine(" Delete Book Successfully");
-            Console.ReadKey();
+            try
+            {
+                Book_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
+
+            if (new Get_By_Book().Get_Book(Book_ID) != null)
+            {
+                new Delete().Delete_Book(Book_ID);
+                Console.WriteLine(" Delete Book Successfully");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine(" Book not found.");
+            }      
         }
 
         public void Delete_Customer()
@@ -85,7 +164,16 @@ namespace Rokomari
             string Book_Author = Console.ReadLine();
 
             Console.Write(" Enter Book Price: ");
-            int Book_Price = int.Parse(Console.ReadLine());
+            int Book_Price = 0;
+
+            try
+            {
+                Book_Price = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
 
             new Create().Create_Books(new Books(Book_Name, Book_Author, Book_Price));
             Console.WriteLine(" Insert Book Successfully");
@@ -110,10 +198,28 @@ namespace Rokomari
         {
             Console.Clear();
             Console.Write(" Enter Book ID: ");
-            int Book_ID = int.Parse(Console.ReadLine());
+            int Book_ID = 0;
+
+            try
+            {
+                Book_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
 
             Console.Write(" Enter Customer ID: ");
-            int Customer_ID = int.Parse(Console.ReadLine());
+            int Customer_ID = 0;
+
+            try
+            {
+                Customer_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
 
             new Create().Create_Orders(Book_ID, Customer_ID);
             Console.WriteLine(" Insert Order Successfully");
@@ -159,7 +265,16 @@ namespace Rokomari
         {
             Console.Clear();
             Console.Write(" Enter Book ID: ");
-            int Book_ID = int.Parse(Console.ReadLine());
+            int Book_ID = 0;
+
+            try
+            {
+                Book_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
 
             Console.Write(" Enter Book Name: ");
             string Book_Name = Console.ReadLine();
@@ -168,7 +283,16 @@ namespace Rokomari
             string Book_Author = Console.ReadLine();
 
             Console.Write(" Enter Book price: ");
-            int Book_Price = int.Parse(Console.ReadLine());
+            int Book_Price = 0;
+
+            try
+            {
+                Book_Price = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
 
             new Update().Update_Book(new Books(Book_ID, Book_Name, Book_Author, Book_Price));
             Console.WriteLine(" Update Book Successfully");
@@ -179,7 +303,16 @@ namespace Rokomari
         {
             Console.Clear();
             Console.Write(" Enter Customer ID: ");
-            int Customer_ID = int.Parse(Console.ReadLine());
+            int Customer_ID = 0;
+
+            try
+            {
+                Customer_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
 
             Console.Write(" Enter Customer Name: ");
             string Customer_Name = Console.ReadLine();
@@ -196,13 +329,40 @@ namespace Rokomari
         {
             Console.Clear();
             Console.Write(" Enter Order ID: ");
-            int Order_ID = int.Parse(Console.ReadLine());
+            int Order_ID = 0;
+
+            try
+            {
+                Order_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
 
             Console.Write(" Enter Book ID: ");
-            int Book_ID = int.Parse(Console.ReadLine());
+            int Book_ID = 0;
+
+            try
+            {
+                Book_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
 
             Console.Write(" Enter Customer ID: ");
-            int Customer_ID = int.Parse(Console.ReadLine());
+            int Customer_ID = 0;
+
+            try
+            {
+                Customer_ID = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(" String is not valid\n");
+            }
 
             new Update().Update_Order(Order_ID, Book_ID, Customer_ID);
             Console.WriteLine(" Update Order Successfully");

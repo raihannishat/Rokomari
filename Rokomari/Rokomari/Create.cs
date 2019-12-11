@@ -6,11 +6,8 @@ using System.Data.SqlClient;
 
 namespace Rokomari
 {
-    public class Create
+    public class Create : Connection
     {
-        private const string _ConnectionString = "Server = DESKTOP-P2EDQU6; Database = Rokomari; Trusted_Connection = true;";
-        private string _QueryString = null;
-
         public void Create_Books(Books Book)
         {
             _QueryString = " INSERT INTO Books (Book_Name, Book_Author, Book_Price) " +

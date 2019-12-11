@@ -7,11 +7,8 @@ using ConsoleTables;
 
 namespace Rokomari
 {
-    public class Read
+    public class Read : Connection
     {
-        private const string _ConnectionString = "Server = DESKTOP-P2EDQU6; Database = Rokomari; Trusted_Connection = true;";
-        private string _QueryString = null;
-
         public void Read_Books()
         {
             List<Books> Book_List = new List<Books>();

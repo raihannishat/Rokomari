@@ -13,7 +13,16 @@ namespace Rokomari
                 Rokomari.Main_Menu();
 
                 Console.Write("Choose an Option: ");
-                int Option = int.Parse(Console.ReadLine());
+                int Option = 0;
+
+                try
+                {
+                    Option = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine(" String is not valid\n");
+                }
 
                 if (Option == 1)
                 {
@@ -33,10 +42,6 @@ namespace Rokomari
                     else if (Book_Option == 3)
                     {
                         Rokomari.Update_Book();
-                    }
-                    else if (Book_Option == 4)
-                    {
-                        Rokomari.Delete_Book();
                     }
                 }
                 else if (Option == 2)
@@ -58,10 +63,6 @@ namespace Rokomari
                     {
                         Rokomari.Update_Customer();
                     }
-                    else if (Customer_Option == 4)
-                    {
-                        Rokomari.Delete_Customer();
-                    }
                 }
                 else if (Option == 3)
                 {
@@ -69,13 +70,25 @@ namespace Rokomari
                     new Read().Read_Books();
                     Rokomari.Buy_Book();
                 }
+                else if (Option == 4)
+                {
+                    Rokomari.Book_Info();
+                }
+                else if (Option == 5)
+                {
+                    Rokomari.Customer_Info();
+                }
                 else if (Option == 6)
                 {
                     Rokomari.Select_Order();
                 }
+                else if (Option == 7)
+                {
+                    Environment.Exit(0);
+                }
                 else
                 {
-                    break;
+                    continue;
                 }
             }
         }
