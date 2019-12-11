@@ -1,0 +1,20 @@
+CREATE DATABASE Rokomari;
+
+CREATE TABLE Books (
+	Book_ID int NOT NULL PRIMARY KEY,
+	Book_Name varchar(255),
+	Book_Author varchar(255),
+	Book_Price int,
+);
+
+CREATE TABLE Customers(
+	Customer_ID int NOT NULL PRIMARY KEY,
+	Customer_Name varchar(255),
+	Customer_Address varchar(255),
+);
+
+CREATE TABLE Orders(
+	Order_ID int NOT NULL PRIMARY KEY,
+	Book_ID int FOREIGN KEY REFERENCES Books (Book_ID),
+	Customer_ID int FOREIGN KEY REFERENCES Customers (Customer_ID)
+);
